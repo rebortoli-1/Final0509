@@ -13,9 +13,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+#from xml.etree.ElementInclude import include
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('AppFinal0509/', include ('AppFinal0509.urls')),
 ]
+# Clase 24
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.views.generic import RedirectView
+#from AppCoder.views import * #Ya no seria necesario :) 
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', RedirectView.as_view(url='/AppFinal0509/', permanent=True)), # Para que ingrese directamente a nuestra pagina
+    path('AppFinal0509/', include('AppFinal0509.urls')),
+    
+]
+
+# Clase 24 --> Para las imagenes
+urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

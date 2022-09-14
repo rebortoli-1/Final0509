@@ -1,0 +1,50 @@
+{% extends "AppFinal0509/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+{{mensaje}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metricas_List</title>
+    
+</head>
+<body style="background-color:  rgb(64, 151, 202);">
+   
+    <h1 style="color: hsl(210, 37%, 97%);">Listado de Metricas</h1>
+    {% load static %}
+   
+    
+        <img src="{% static 'AppFinal0509/assets/img/deploy_freq.svg' %}" style="align-self: auto;" width="30%" height="100" alt="img">
+        <img src="{% static 'AppFinal0509/assets/img/lead_time.svg' %}"  style="align-self: auto;" width="30%" height="100" alt="img">
+        <img src="{% static 'AppFinal0509/assets/img/chg_fail.svg' %}"  style="align-self: auto;" width="30%" height="100" alt="img">
+    
+    
+        
+
+            <ul class="list-group list-group-numbered" style="color: hsl(210, 37%, 97%);">
+                {% for metrica in object_list %}
+                <p>NOMBRE: {{ metrica.nombre }} </p>
+                <li class="list-group-item"><a href="{% url 'Detail' metrica.id %}" >Ver</a></li>
+                <li class="list-group-item"><a href="{% url 'Edit' metrica.id %}">Editar</a></li>
+                <li class="list-group-item"><a href="{% url 'Delete' metrica.id %}">Borrar</a></li>
+                {% endfor %}
+            </ul>
+           
+
+        
+    
+
+    <a href="{% url 'New'  %}"style="color: hsl(210, 37%, 97%);">Nuevo</a> | 
+
+    <a href="{% url 'inicio' %}"style="color: hsl(210, 37%, 97%);">Volver</a>
+    
+
+</body>
+
+</html>
+{% endblock %}

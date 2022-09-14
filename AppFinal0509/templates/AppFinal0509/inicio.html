@@ -1,0 +1,37 @@
+{% extends "AppFinal0509/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+{{mensaje}}
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+  <h1 style="color: hsl(210, 37%, 97%);">DevOps </h1>
+  <h5 style="color: hsl(210, 37%, 97%);">Conoce en detalle DevOps, un movimiento organizativo y cultural que tiene como objetivo aumentar la velocidad de entrega de software, mejorar la confiabilidad de los servicios y crear una propiedad compartida entre las partes interesadas en el software</h5>
+
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Metricas</a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Proyectos</button>
+    
+  </p>
+  <div class="row">
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+         <a>Frecuencia de implementación : con qué frecuencia una organización lanza con éxito a producción</a> 
+         <a>Lead Time for Changes: la cantidad de tiempo que tarda una confirmación en entrar en producción</a> 
+         <a>Change Failure Rate : el porcentaje de implementaciones que provocan un error en la producción</a> 
+         
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+          Compare el rendimiento de su equipo con el de otros y descubra en qué capacidades de DevOps debe centrarse para mejorar. No almacenamos sus respuestas o información personal.
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+{% endblock %}

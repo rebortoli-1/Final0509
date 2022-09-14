@@ -1,0 +1,27 @@
+{% extends "AppFinal0509/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+{{mensaje}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrica Detalle</title>
+</head>
+<body style="background-color:  rgb(64, 151, 202);">
+
+   
+    <p  style="color: hsl(210, 37%, 97%);">Nombre de la Metrica: <i>{{metrica.nombre }}</i></p>
+    <p style="color: hsl(210, 37%, 97%);">Proyecto: <i>{{ metrica.proyecto_ref}}</i></p>
+    <p style="color: hsl(210, 37%, 97%);">Observacion: <i>{{ metrica.observacion }}</i></p>
+    <p>
+        <a href="{% url 'List' %}"  style="color: hsl(210, 37%, 97%);">Regresar</a>
+    </p>
+
+    
+</body>
+</html>
+{% endblock %}
